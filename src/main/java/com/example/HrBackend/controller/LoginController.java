@@ -22,6 +22,10 @@ public class LoginController {
     @Autowired
     private EmployeeRepository repo;
 
+    @GetMapping("/healthCheck")
+    public String HealthCheck(){
+        return "application started";
+    }
     @PostMapping("/Login")
     public EmployeeDetailsResponse login(
             @RequestParam String UserId,
